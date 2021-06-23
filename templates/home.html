@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+{% extends 'camerahub/base.html'%}
+
+{% block content %}
+
+<h1><center>Google Camera Hub</center> </h1>
+
+{% load static %}
+
+<! <a href="{% url 'blog:all_blogs'%}"><!Blog</a>
+
+
+<!<a href="{% static 'camerahub/Improve Your Photography.pdf' %}"> <!Improve Photography</a
+>
+
+<center><img src="{% static 'camerahub/camerahome.png' %}" height = "800" width = "1200"></center>
+{% for gcam in camera %}
+
+<div class="alert alert-secondary" role="alert">
+<h2>{{ gcam.title }}</h2>
+<p>{{ gcam.description}}</p>
+<img src="{{ gcam.image.url }}" height="300" width="450" >
+{% if gcam.url%}
+<br><a href="{{gcam.url}}">Download</a>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

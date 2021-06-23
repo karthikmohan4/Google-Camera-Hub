@@ -1,0 +1,33 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'home' %}">Google Camera</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link " href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="Blog" data-placement ="bottom" title = "Read blogs" href="{% url 'blog:all_blogs'%}">Blog</a>
+      </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link" data-toggle="Tips and Tricks" data-placement ="bottom" title = "Read PDF" href="{% static 'camerahub/Improve Your Photography.pdf' %}">Tips and Tricks</a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/karthik-m-68374a170/">Linkedin</a>
+
+      </li>
+    </ul>
+    <a class="nav-link" href="https://github.com/karthikmohan4">github</a>
+
+  </div>
+</nav>
+<div class="container">
+
+    {% block content %}{% endblock %}
+
+  </div>
